@@ -9,7 +9,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource sfxSource;
     [Header("Audio Clips")]
     public AudioClip backgroundMusic;
-    public AudioClip jumpSFX;
     public AudioClip collectibleSFX;
 
     void Awake()

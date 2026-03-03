@@ -5,7 +5,7 @@ public class Collectible : MonoBehaviour
     [SerializeField] private float rotationSpeed = 90f;
     void Update()
     {
-        transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f);
+        transform.Rotate(0f, 0, rotationSpeed * Time.deltaTime);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

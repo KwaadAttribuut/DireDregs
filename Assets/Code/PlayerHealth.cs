@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth: MonoBehaviour, iDamageable
 {
-    [SerializeField] float maxHealth = 100f;
+    [SerializeField] float maxHealth = 5f;
     [SerializeField] float invulnerabilityDuration = 1f;
     [SerializeField] float blinkInterval = 0.1f;
 

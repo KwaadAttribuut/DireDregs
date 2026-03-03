@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        collectibleText.text = $"Collectibles: {collectibleCount}"; // lazy line, as mentioned it should be in its own UI script
+        // collectibleText.text = $"Collectibles: {collectibleCount}"; // lazy line, as mentioned it should be in its own UI script
     }
 
     public void AddCollectible()
