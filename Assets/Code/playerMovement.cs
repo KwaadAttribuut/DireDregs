@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
