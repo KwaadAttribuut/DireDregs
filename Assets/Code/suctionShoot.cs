@@ -1,12 +1,14 @@
+using System.Collections;
 using Mono.Cecil.Cil;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class suctionShoot : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bullet;
     [SerializeField] float shotCooldown;
-    private float shotCounter;
+    bool canShoot = true;
     private int ammoCount;
     void Start()
     {
@@ -24,25 +26,36 @@ public class suctionShoot : MonoBehaviour
         float angle = Mathf.Atan2(mouseDistance.y, mouseDistance.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
 
-        if (Input.GetMouseButton(0))
+    public void Shoot(InputAction.CallbackContext context)
+    {
+        if (context.performed && !Input.GetMouseButton(0) && ammoCount > 0 && canShoot)
+        {
+            StartCoroutine(ShootCoroutine());
+        }
+    }
+
+    private IEnumerator ShootCoroutine()
+    {
+        canShoot = false;
+
+        Instantiate(bullet, firePoint.position, firePoint.rotation);
+        GameManager.Instance.RemoveAmmo(1);
+
+        yield return new WaitForSeconds(shotCooldown);
+        canShoot = true;
+    }
+
+    public void Vacuum(InputAction.CallbackContext context)
+    {
+        if (context.performed)
         {
             gameObject.GetComponent<PolygonCollider2D>().enabled = true;
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (context.canceled)
         {
             gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         }
-        if (Input.GetMouseButton(1) && !Input.GetMouseButton(0) && ammoCount != 0)
-        {
-            shotCounter -= Time.deltaTime;
-
-            if(shotCounter <= 0)
-            {
-                shotCounter = shotCooldown;
-                Instantiate(bullet, firePoint.position, firePoint.rotation);
-                GameManager.Instance.RemoveAmmo(1);
-            }
-        }   
     }
 }
