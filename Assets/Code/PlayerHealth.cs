@@ -42,6 +42,7 @@ public class PlayerHealth: MonoBehaviour, iDamageable
         return false;
 
         currentHealth -= amount;
+        CameraShakeManager.Instance.Shake(2f, 0.25f);
 
         if(healthSlider != null)
             healthSlider.value = currentHealth;
