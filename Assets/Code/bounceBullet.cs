@@ -6,28 +6,53 @@ using Unity.VisualScripting;
 public class bounceBullet : MonoBehaviour
 {
     [Header("Bullet Control")]
-    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float[] moveSpeed;
     [SerializeField] private float damage = 1f;
     private Rigidbody2D rb;
-    [SerializeField] float damageTimer;
+    [SerializeField] float[] damageTimer;
     private bool canDamage = true;
+    private float shootHoldTime;
 
     [Header("Sprite Control")]
     [SerializeField] Sprite[] bulletSprites;
+
+    [System.Obsolete]
     void Start()
     {
+        suctionShoot sctnShoot = FindObjectOfType<suctionShoot>();
+        if (sctnShoot != null)
+        {
+            shootHoldTime = sctnShoot.timePressed;
+        }
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = transform.right * moveSpeed;
-        StartCoroutine(canDamageTimer(damageTimer));
+        if (shootHoldTime <= 1)
+        {
+            rb.linearVelocity = transform.right * moveSpeed[0];
+            StartCoroutine(canDamageTimer(damageTimer[0]));
+        }
+        else if (1 < shootHoldTime && shootHoldTime <= 2)
+        {
+            rb.linearVelocity = transform.right * moveSpeed[1];
+            StartCoroutine(canDamageTimer(damageTimer[1]));
+        }
+        else if (2 < shootHoldTime)
+        {
+            rb.linearVelocity = transform.right * moveSpeed[2];
+            StartCoroutine(canDamageTimer(damageTimer[2]));
+        }
+        else
+        {
+            Debug.Log("Shoot hold value error");
+        }
     }
-    
+
     void Update()
     {
-        if(canDamage == true)
+        if (canDamage == true)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = bulletSprites[0];
         }
-        else if(canDamage == false)
+        else if (canDamage == false)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = bulletSprites[1];
         }
@@ -35,9 +60,9 @@ public class bounceBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!collision.gameObject.CompareTag("Player") && canDamage == true)
+        if (!collision.gameObject.CompareTag("Player") && canDamage == true)
         {
-            if(collision.gameObject.TryGetComponent(out iDamageable damageable))
+            if (collision.gameObject.TryGetComponent(out iDamageable damageable))
             {
                 damageable.ApplyDamage(damage);
             }
@@ -57,6 +82,6 @@ public class bounceBullet : MonoBehaviour
     private IEnumerator canDamageTimer(float duration)
     {
         yield return new WaitForSecondsRealtime(duration);
-        canDamage =  false;
+        canDamage = false;
     }
 }

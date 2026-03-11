@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Mono.Cecil.Cil;
 using UnityEngine;
@@ -12,10 +13,7 @@ public class suctionShoot : MonoBehaviour
     private int ammoCount;
 
     // Hold button code 
-    [SerializeField] private float downTime, upTime = 0;
-    public float pressTime = 0;
-    [SerializeField] private float countDown = 2.0f;
-    [SerializeField] private bool ready = false;
+    public float timePressed = 0f;
 
     void Start()
     {
@@ -39,19 +37,30 @@ public class suctionShoot : MonoBehaviour
     {
         if (context.performed && !Input.GetMouseButton(0) && ammoCount > 0 && canShoot)
         {
-            // StartCoroutine(ShootCoroutine());
-            downTime = Time.time;
-            pressTime = downTime + countDown;
-            ready = true;
+            timePressed = Time.time;
         }
         if (context.canceled && !Input.GetMouseButton(0) && ammoCount > 0 && canShoot)
         {
-            if (Time.time >= pressTime && ready == true)
+            timePressed = Time.time - timePressed;
+            if (timePressed <= 1)
             {
-                ready = false;
                 StartCoroutine(ShootCoroutine());
+                CameraShakeManager.Instance.Shake(0.5f, 0.25f);
             }
-
+            else if (1 < timePressed && timePressed <= 2)
+            {
+                StartCoroutine(ShootCoroutine());
+                CameraShakeManager.Instance.Shake(3f, 0.25f);
+            }
+            else if (2 < timePressed)
+            {
+                StartCoroutine(ShootCoroutine());
+                CameraShakeManager.Instance.Shake(10f, 0.45f);
+            }
+            else
+            {
+                Debug.Log("Shoot hold value error");
+            }
         }
     }
 

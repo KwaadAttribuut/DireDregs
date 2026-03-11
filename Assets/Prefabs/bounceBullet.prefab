@@ -179,9 +179,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dfbffd56a8d8d4ea568fb03f13ee1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
+  moveSpeed:
+  - 5
+  - 15
+  - 30
   damage: 1
-  damageTimer: 1.5
+  damageTimer:
+  - 1
+  - 2
+  - 2.5
   bulletSprites:
   - {fileID: 389235367908782542, guid: c3c760af49dc00240a147018a88710a9, type: 3}
   - {fileID: -1197163132651269052, guid: eebc2c5e3aeca984292c420dd9fdfba0, type: 3}
