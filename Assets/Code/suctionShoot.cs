@@ -10,6 +10,13 @@ public class suctionShoot : MonoBehaviour
     [SerializeField] float shotCooldown;
     bool canShoot = true;
     private int ammoCount;
+
+    // Hold button code 
+    [SerializeField] private float downTime, upTime = 0;
+    public float pressTime = 0;
+    [SerializeField] private float countDown = 2.0f;
+    [SerializeField] private bool ready = false;
+
     void Start()
     {
         gameObject.GetComponent<PolygonCollider2D>().enabled = false;
@@ -32,7 +39,19 @@ public class suctionShoot : MonoBehaviour
     {
         if (context.performed && !Input.GetMouseButton(0) && ammoCount > 0 && canShoot)
         {
-            StartCoroutine(ShootCoroutine());
+            // StartCoroutine(ShootCoroutine());
+            downTime = Time.time;
+            pressTime = downTime + countDown;
+            ready = true;
+        }
+        if (context.canceled && !Input.GetMouseButton(0) && ammoCount > 0 && canShoot)
+        {
+            if (Time.time >= pressTime && ready == true)
+            {
+                ready = false;
+                StartCoroutine(ShootCoroutine());
+            }
+
         }
     }
 
@@ -58,4 +77,5 @@ public class suctionShoot : MonoBehaviour
             gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         }
     }
+
 }

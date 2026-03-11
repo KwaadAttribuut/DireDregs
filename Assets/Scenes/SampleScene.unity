@@ -3150,7 +3150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 162219649}
-  bullet: {fileID: 3958577134634854740, guid: 2a9ec40f302719a43a20b73816e37419, type: 3}
+  bullet: {fileID: 4995954399353935530, guid: 9e867a10b59cd654eb314e31c346637d, type: 3}
   shotCooldown: 1
 --- !u!60 &1074859752
 PolygonCollider2D:

@@ -1,3 +1,4 @@
+using System.Collections;
 using NUnit.Framework;
 using TMPro;
 using Unity.VisualScripting;
@@ -7,13 +8,17 @@ public class GameManager : MonoBehaviour
 {
     // UI display elements would be in a seperate UI script in order to avoid the game manager becoming a God Object
     public static GameManager Instance {get; private set;}
+    [Header("Collectibles")]
     public int collectibleCount = 0;
     public TMP_Text collectibleText;
+    [Header("Weapons and Ammo")]
     public int currentAmmoCount = 0;
     [SerializeField] int maxAmmoCount;
     public TMP_Text ammoCounterText;
     public bool isSuctionOn;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Hitstop")]
+    private bool waitingHitStop;
+
     void Awake()
     {
         if(Instance == null)
@@ -34,6 +39,8 @@ public class GameManager : MonoBehaviour
         isSuctionOn = false;
     }
 
+    // COLLECTIBLE SYSTEM //
+
     public void AddCollectible()
     {
         collectibleCount++;
@@ -46,6 +53,8 @@ public class GameManager : MonoBehaviour
             collectibleText.text = $"Collectibles: {collectibleCount}";
         }
     }
+
+    // AMMO SYSTEM //
 
     public void AddAmmo(int ammoAdd)
     {
@@ -80,5 +89,23 @@ public class GameManager : MonoBehaviour
     private void refuseAmmo()
     {
         Debug.Log("Ammo Full");
+    }
+
+    // HIT STOP //
+
+    public void Stop(float duration)
+    {
+        if (waitingHitStop)
+            return;
+        Time.timeScale = 0.0f;
+        StartCoroutine(WaitForHitstop(duration));
+    }
+
+    private IEnumerator WaitForHitstop(float duration)
+    {
+        waitingHitStop = true;
+        yield return new WaitForSecondsRealtime(duration);
+        Time.timeScale = 1.0f;
+        waitingHitStop = false;
     }
 }
