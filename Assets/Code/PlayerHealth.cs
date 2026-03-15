@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 [RequireComponent(typeof(SpriteRenderer))]
 
@@ -84,5 +85,11 @@ public class PlayerHealth: MonoBehaviour, iDamageable
         PauseController.SetPause(true);
         gameOverPanel.SetActive(true);
         gameObject.SetActive(false);
+    }
+
+    public void ReloadScene()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
