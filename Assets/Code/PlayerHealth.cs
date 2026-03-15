@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 [RequireComponent(typeof(SpriteRenderer))]
@@ -7,6 +8,7 @@ public class PlayerHealth: MonoBehaviour, iDamageable
     public float maxPlayerHealth = 5f;
     [SerializeField] float invulnerabilityDuration = 1f;
     [SerializeField] float blinkInterval = 0.1f;
+    public GameObject gameOverPanel;
 
     public float currentPlayerHealth;
     float invulnerabilityTimer;
@@ -79,6 +81,8 @@ public class PlayerHealth: MonoBehaviour, iDamageable
     }
     void Die()
     {
+        PauseController.SetPause(true);
+        gameOverPanel.SetActive(true);
         gameObject.SetActive(false);
     }
 }
