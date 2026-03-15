@@ -86,10 +86,4 @@ public class PlayerHealth: MonoBehaviour, iDamageable
         gameOverPanel.SetActive(true);
         gameObject.SetActive(false);
     }
-
-    public void ReloadScene()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }
