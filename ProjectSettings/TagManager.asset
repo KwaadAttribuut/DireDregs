@@ -6,6 +6,7 @@ TagManager:
   tags:
   - suctionArea
   - collectionArea
+  - Enemy
   layers:
   - Default
   - TransparentFX

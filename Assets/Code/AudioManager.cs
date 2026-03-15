@@ -5,10 +5,16 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance {get; private set;}
     [Header("Audio Sources")]
+    public AudioSource UISource;
     public AudioSource musicSource;
     public AudioSource sfxSource;
+    public AudioSource enemySource;
     [Header("Audio Clips")]
     public AudioClip backgroundMusic;
+    public AudioClip UISelect;
+    public AudioClip playerShoot;
+    public AudioClip playerDash;
+    public AudioClip damageSFX;
     public AudioClip collectibleSFX;
 
     void Awake()
@@ -33,13 +39,17 @@ public class AudioManager : MonoBehaviour
             musicSource.Play();
         }
     }
-    public void PlaySFX(AudioClip clip)
+
+    public void PlayUI(AudioClip clip)
     {
-        if(clip != null && sfxSource != null)
+        if(clip != null && UISource != null)
         {
-            sfxSource.PlayOneShot(clip);
+            musicSource.clip = clip;
+            musicSource.loop = true;
+            musicSource.Play();
         }
     }
+
     public void PlayMusic(AudioClip clip)
     {
         if(clip != null && musicSource != null)
@@ -47,6 +57,22 @@ public class AudioManager : MonoBehaviour
             musicSource.clip = clip;
             musicSource.loop = true;
             musicSource.Play();
+        }
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        if(clip != null && sfxSource != null)
+        {
+            sfxSource.PlayOneShot(clip);
+        }
+    }
+
+    public void PlayEnemySFX(AudioClip clip)
+    {
+        if(clip != null && enemySource != null)
+        {
+            sfxSource.PlayOneShot(clip);
         }
     }
 }

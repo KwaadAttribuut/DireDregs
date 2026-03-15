@@ -8,14 +8,20 @@ public class GameManager : MonoBehaviour
 {
     // UI display elements would be in a seperate UI script in order to avoid the game manager becoming a God Object
     public static GameManager Instance {get; private set;}
-    [Header("Collectibles")]
-    public int collectibleCount = 0;
-    public TMP_Text collectibleText;
+    [Header("Health Counter")]
+    PlayerHealth healthcount;
+    public TMP_Text healthText;
+
     [Header("Weapons and Ammo")]
     public int currentAmmoCount = 0;
     [SerializeField] int maxAmmoCount;
     public TMP_Text ammoCounterText;
     public bool isSuctionOn;
+
+    [Header("Collectibles")]
+    public int collectibleCount = 0;
+    public TMP_Text collectibleText;
+
     [Header("Hitstop")]
     private bool waitingHitStop;
 
@@ -36,21 +42,28 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         UpdateAmmoUI();
+        updateHealthUI();
+        UpdateCollectibleUI();
         isSuctionOn = false;
     }
 
     // COLLECTIBLE SYSTEM //
 
-    public void AddCollectible()
+    public void updateHealthUI()
     {
-        collectibleCount++;
+        PlayerHealth healthcount = FindFirstObjectByType<PlayerHealth>();
+        healthText.text = $"Health: {healthcount.currentPlayerHealth} / {healthcount.maxPlayerHealth}";
+    }
+    public void AddCollectible(int collectibleAmount)
+    {
+        collectibleCount += collectibleAmount;
         UpdateCollectibleUI();
     }
     private void UpdateCollectibleUI()
     {
         if(collectibleText != null)
         {
-            collectibleText.text = $"Collectibles: {collectibleCount}";
+            collectibleText.text = $"Collection Score: {collectibleCount}";
         }
     }
 

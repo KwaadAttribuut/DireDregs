@@ -1,0 +1,673 @@
+fileFormatVersion: 2
+guid: 84b164be3b5610644bd485fb3fa75526
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9000225973526245935
+    second: DDgarbageSlime_0
+  - first:
+      213: -49218889455636303
+    second: DDgarbageSlime_1
+  - first:
+      213: -7731982766551627849
+    second: DDgarbageSlime_2
+  - first:
+      213: 5000777684017920765
+    second: DDgarbageSlime_3
+  - first:
+      213: 4234801449909408109
+    second: DDgarbageSlime_4
+  - first:
+      213: -7572990063068224957
+    second: DDgarbageSlime_5
+  - first:
+      213: 6435121202758742254
+    second: DDgarbageSlime_6
+  - first:
+      213: 8566700070248191220
+    second: DDgarbageSlime_7
+  - first:
+      213: 2689129728075037095
+    second: DDgarbageSlime_8
+  - first:
+      213: -1058631626382798838
+    second: DDgarbageSlime_9
+  - first:
+      213: -6425977924513132978
+    second: DDgarbageSlime_10
+  - first:
+      213: 8600585223453255700
+    second: DDgarbageSlime_11
+  - first:
+      213: -4959767462995143973
+    second: DDgarbageSlime_12
+  - first:
+      213: 8486801218894534794
+    second: DDgarbageSlime_13
+  - first:
+      213: -6886566365596057428
+    second: DDgarbageSlime_14
+  - first:
+      213: -1382715223655104527
+    second: DDgarbageSlime_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DDgarbageSlime_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape:
+      - - {x: 15, y: -2}
+        - {x: 7, y: 4}
+        - {x: -6, y: 4}
+        - {x: -14, y: -2}
+        - {x: -14, y: -7}
+        - {x: 15, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22b64276d937ec70800000000000000
+      internalID: 9000225973526245935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape:
+      - - {x: 15, y: -2}
+        - {x: 7, y: 5}
+        - {x: -6, y: 5}
+        - {x: -14, y: -2}
+        - {x: -14, y: -7}
+        - {x: 15, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b0f1c94ea3215ff0800000000000000
+      internalID: -49218889455636303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape:
+      - - {x: 15, y: -2}
+        - {x: 7, y: 6}
+        - {x: -6, y: 6}
+        - {x: -14, y: -2}
+        - {x: -14, y: -7}
+        - {x: 15, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b78f3eb3aa72b490800000000000000
+      internalID: -7731982766551627849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape:
+      - - {x: 10, y: -5}
+        - {x: 5, y: -1}
+        - {x: -4, y: -1}
+        - {x: -8, y: -5}
+        - {x: -8, y: -8}
+        - {x: 10, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfab690fec4566540800000000000000
+      internalID: 5000777684017920765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape:
+      - - {x: 12, y: -5}
+        - {x: 11, y: -2}
+        - {x: 4, y: 3}
+        - {x: -2, y: 3}
+        - {x: -10, y: -3}
+        - {x: -10, y: -8}
+        - {x: 9, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61d8245b7905ca30800000000000000
+      internalID: 4234801449909408109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342614b39a557e690800000000000000
+      internalID: -7572990063068224957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0f401a3a42e4950800000000000000
+      internalID: 6435121202758742254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f41578535803e670800000000000000
+      internalID: 8566700070248191220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9fad47d35b15520800000000000000
+      internalID: 2689129728075037095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a009579052cfe41f0800000000000000
+      internalID: -1058631626382798838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 8, y: 7}
+        - {x: -7, y: 7}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e84eabf1752d6a0800000000000000
+      internalID: -6425977924513132978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418a76061ba6b5770800000000000000
+      internalID: 8600585223453255700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd252a735cd5b2bb0800000000000000
+      internalID: -4959767462995143973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a889f8b5ebc27c570800000000000000
+      internalID: 8486801218894534794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca08e7880600e60a0800000000000000
+      internalID: -6886566365596057428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DDgarbageSlime_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 16, y: -2}
+        - {x: 6, y: 6}
+        - {x: -8, y: 6}
+        - {x: -16, y: -2}
+        - {x: -16, y: -8}
+        - {x: 16, y: -8}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff338c74db9fcce0800000000000000
+      internalID: -1382715223655104527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 420650af98e142a43ba6f4d0906264fc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DDgarbageSlime_0: 9000225973526245935
+      DDgarbageSlime_1: -49218889455636303
+      DDgarbageSlime_10: -6425977924513132978
+      DDgarbageSlime_11: 8600585223453255700
+      DDgarbageSlime_12: -4959767462995143973
+      DDgarbageSlime_13: 8486801218894534794
+      DDgarbageSlime_14: -6886566365596057428
+      DDgarbageSlime_15: -1382715223655104527
+      DDgarbageSlime_2: -7731982766551627849
+      DDgarbageSlime_3: 5000777684017920765
+      DDgarbageSlime_4: 4234801449909408109
+      DDgarbageSlime_5: -7572990063068224957
+      DDgarbageSlime_6: 6435121202758742254
+      DDgarbageSlime_7: 8566700070248191220
+      DDgarbageSlime_8: 2689129728075037095
+      DDgarbageSlime_9: -1058631626382798838
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

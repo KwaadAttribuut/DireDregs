@@ -71,6 +71,7 @@ public class playerMovement : MonoBehaviour
 
         trailRenderer.emitting = true;
 
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.playerDash);
         rb.linearVelocity = new Vector2(moveDirection.x * dashSpeed, moveDirection.y * dashSpeed);
 
         yield return new WaitForSeconds(dashDuration);

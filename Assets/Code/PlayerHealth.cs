@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class PlayerHealth: MonoBehaviour, iDamageable
 {
-    [SerializeField] float maxHealth = 5f;
+    public float maxPlayerHealth = 5f;
     [SerializeField] float invulnerabilityDuration = 1f;
     [SerializeField] float blinkInterval = 0.1f;
 
-    float currentHealth;
+    public float currentPlayerHealth;
     float invulnerabilityTimer;
 
     SpriteRenderer sprite;
@@ -19,13 +19,13 @@ public class PlayerHealth: MonoBehaviour, iDamageable
 
     void Awake()
     {
-        currentHealth = maxHealth;
+        currentPlayerHealth = maxPlayerHealth;
         sprite = GetComponent<SpriteRenderer>();
 
         if(healthSlider != null)
         {
-            healthSlider.maxValue = maxHealth;
-            healthSlider.value = currentHealth;
+            healthSlider.maxValue = maxPlayerHealth;
+            healthSlider.value = currentPlayerHealth;
         }
     }
     void Update()
@@ -38,16 +38,18 @@ public class PlayerHealth: MonoBehaviour, iDamageable
     }
     public bool ApplyDamage(float amount)
     {
-        if(currentHealth <= 0f || invulnerabilityTimer > 0f)
+        if(currentPlayerHealth <= 0f || invulnerabilityTimer > 0f)
         return false;
 
-        currentHealth -= amount;
+        currentPlayerHealth -= amount;
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.damageSFX);
+        GameManager.Instance.updateHealthUI();
         CameraShakeManager.Instance.Shake(2f, 0.25f);
 
         if(healthSlider != null)
-            healthSlider.value = currentHealth;
+            healthSlider.value = currentPlayerHealth;
 
-        if(currentHealth <= 0)
+        if(currentPlayerHealth <= 0)
         {
             Die();
             return true;

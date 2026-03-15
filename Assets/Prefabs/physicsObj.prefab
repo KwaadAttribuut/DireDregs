@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 905301124013897944}
   - component: {fileID: 4554383067374534982}
   - component: {fileID: 811698750591277310}
+  - component: {fileID: -4017127017217578297}
   - component: {fileID: 1255699777170257105}
   m_Layer: 0
   m_Name: physicsObj
@@ -106,7 +107,7 @@ Rigidbody2D:
   m_LinearDamping: 1.5
   m_AngularDamping: 1
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 8ca789361408f9e46a24baac84ba092d, type: 2}
+  m_Material: {fileID: 6200000, guid: 586fd4318f32e4c4bb323d4643a8769c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -153,6 +154,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.6
+--- !u!114 &-4017127017217578297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3990775269884756049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1163b3351799840b6ed88851a8091b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 90
+  collectionScore: 50
 --- !u!114 &1255699777170257105
 MonoBehaviour:
   m_ObjectHideFlags: 0

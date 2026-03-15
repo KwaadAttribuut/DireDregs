@@ -1,5 +1,4 @@
 using DG.Tweening;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class moveExample : MonoBehaviour

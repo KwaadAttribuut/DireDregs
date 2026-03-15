@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Mono.Cecil.Cil;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -68,6 +67,7 @@ public class suctionShoot : MonoBehaviour
     {
         canShoot = false;
 
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.playerShoot);
         Instantiate(bullet, firePoint.position, firePoint.rotation);
         GameManager.Instance.RemoveAmmo(1);
 

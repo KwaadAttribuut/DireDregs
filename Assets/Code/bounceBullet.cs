@@ -19,6 +19,7 @@ public class bounceBullet : MonoBehaviour
     [System.Obsolete]
     void Start()
     {
+        GetComponent<Rigidbody2D>().AddTorque(360, ForceMode2D.Impulse);
         suctionShoot sctnShoot = FindObjectOfType<suctionShoot>();
         if (sctnShoot != null)
         {
@@ -60,7 +61,7 @@ public class bounceBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player") && canDamage == true)
+        if (collision.gameObject.CompareTag("Enemy") && canDamage == true)
         {
             if (collision.gameObject.TryGetComponent(out iDamageable damageable))
             {

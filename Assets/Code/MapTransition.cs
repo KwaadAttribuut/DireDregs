@@ -1,3 +1,5 @@
+using System.Collections;
+using NUnit.Framework;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -30,7 +32,6 @@ public class MapTransition : MonoBehaviour
     private void UpdatePlayerPosition(GameObject player)
     {
         Vector3 newPos = player.transform.position;
-
         switch (direction)
         {
             case Direction.Up:
@@ -46,7 +47,6 @@ public class MapTransition : MonoBehaviour
                 newPos.x -= additivePos;
                 break;
         }
-
         player.transform.position = newPos;
     }
 }
