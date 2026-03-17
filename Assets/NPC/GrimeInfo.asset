@@ -17,7 +17,7 @@ MonoBehaviour:
   dialogueLines:
   - Deep grime is dangerous to walk in.
   autoProgressLines: 00
-  autoProgressDelay: 1.5
-  typingSpeed: 0.05
+  autoProgressDelay: 0.1
+  typingSpeed: 0.025
   voiceSound: {fileID: 0}
   voicePitch: 1

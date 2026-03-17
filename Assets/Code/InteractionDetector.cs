@@ -15,6 +15,7 @@ public class InteractionDetector : MonoBehaviour
     {
         if (context.performed)
         {
+            Debug.Log("Interaction Performed");
             interactableInRange?.Interact();
         }
     }

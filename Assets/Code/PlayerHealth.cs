@@ -82,7 +82,7 @@ public class PlayerHealth: MonoBehaviour, iDamageable
     }
     void Die()
     {
-        PauseController.SetPause(true);
+        SceneLoader.Instance.PauseGame();
         gameOverPanel.SetActive(true);
         gameObject.SetActive(false);
     }

@@ -5,7 +5,7 @@ public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
 
-    private bool isPaused = false;
+    public bool isPaused = false;
 
     void Awake()
     {
