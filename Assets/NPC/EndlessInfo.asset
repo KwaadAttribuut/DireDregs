@@ -20,6 +20,6 @@ MonoBehaviour:
   - The grime may be shallow here, but prolonged exposure is dangerous.
   autoProgressLines: 010100
   autoProgressDelay: 1.5
-  typingSpeed: 0.05
+  typingSpeed: 0.025
   voiceSound: {fileID: 0}
   voicePitch: 1

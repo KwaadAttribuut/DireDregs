@@ -18,10 +18,10 @@ MonoBehaviour:
   - Your task is to vacuum trash.
   - You are scored on however much you have collected.
   - Regular trash offers 50 points.
-  - Valuable trash offers 100.
+  - Valuable trash offers 200.
   - Some trash can be recycled into ammunition.
   autoProgressLines: 0101000000
   autoProgressDelay: 1.5
-  typingSpeed: 0.05
+  typingSpeed: 0.025
   voiceSound: {fileID: 0}
   voicePitch: 1

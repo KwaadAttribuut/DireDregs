@@ -24,8 +24,8 @@ public class EnemySlime : MonoBehaviour, iDamageable
     bool blinking;
 
     [Header("Movement")]
-    public bool AwareOfPlayer {get; private set;}
-    public Vector2 DirectionToPlayer {get; private set;}
+    public bool AwareOfPlayer { get; private set; }
+    public Vector2 DirectionToPlayer { get; private set; }
     [SerializeField] private float _playerAwarenessDistance;
     [SerializeField] private float enemySpeed;
     private Vector2 targetDirection;
@@ -54,30 +54,36 @@ public class EnemySlime : MonoBehaviour, iDamageable
     // Update is called once per frame
     void Update()
     {
-        if(invulnerabilityTimer > 0f)
+        if (player != null)
         {
-            invulnerabilityTimer-=Time.deltaTime;
-            HandleBlink();
-        }
-        Vector2 enemyToPlayerVector = player.position - transform.position;
-        DirectionToPlayer = enemyToPlayerVector.normalized; 
+            if (invulnerabilityTimer > 0f)
+            {
+                invulnerabilityTimer -= Time.deltaTime;
+                HandleBlink();
+            }
+            Vector2 enemyToPlayerVector = player.position - transform.position;
+            DirectionToPlayer = enemyToPlayerVector.normalized;
 
-        if (enemyToPlayerVector.magnitude <= _playerAwarenessDistance)
-        {
-            AwareOfPlayer = true;
-            animator.SetBool("isHostile", true);
-        }
-        else
-        {
-            AwareOfPlayer = false;
-            animator.SetBool("isHostile", false);
+            if (enemyToPlayerVector.magnitude <= _playerAwarenessDistance)
+            {
+                AwareOfPlayer = true;
+                animator.SetBool("isHostile", true);
+            }
+            else
+            {
+                AwareOfPlayer = false;
+                animator.SetBool("isHostile", false);
+            }
         }
     }
 
     void FixedUpdate()
     {
-        UpdateTargetDirection();
-        SetVelocity();
+        if (player != null)
+        {
+            UpdateTargetDirection();
+            SetVelocity();
+        }
     }
 
     private void UpdateTargetDirection()
@@ -105,7 +111,7 @@ public class EnemySlime : MonoBehaviour, iDamageable
             animator.SetBool("isMoving", true);
         }
     }
-    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -118,14 +124,14 @@ public class EnemySlime : MonoBehaviour, iDamageable
     }
     public bool ApplyDamage(float amount)
     {
-        if(currentHealth <= 0f || invulnerabilityTimer > 0f)
-        return false;
+        if (currentHealth <= 0f || invulnerabilityTimer > 0f)
+            return false;
 
         currentHealth -= amount;
         AudioManager.Instance.PlayEnemySFX(AudioManager.Instance.damageSFX);
         GameManager.Instance.Stop(0.15f);
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
             return true;
@@ -142,16 +148,16 @@ public class EnemySlime : MonoBehaviour, iDamageable
     }
     void HandleBlink()
     {
-        if(!blinking) return;
+        if (!blinking) return;
         blinkTimer -= Time.deltaTime;
-        if(blinkTimer <= 0f)
+        if (blinkTimer <= 0f)
         {
             blinking = false;
             sprite.enabled = true;
             return;
         }
-        sprite.enabled = 
-        Mathf.FloorToInt(blinkTimer/blinkInterval) % 2 == 0;
+        sprite.enabled =
+        Mathf.FloorToInt(blinkTimer / blinkInterval) % 2 == 0;
     }
     void Die()
     {

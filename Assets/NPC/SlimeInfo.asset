@@ -18,8 +18,8 @@ MonoBehaviour:
   - Some of the garbage has begun coalescing and moving on its own.
   - It is your job to take care of this sludgy scourge.
   - They have been recorded to drop trash on defeat.
-  autoProgressLines: 010000
+  autoProgressLines: 010100
   autoProgressDelay: 1.5
-  typingSpeed: 0.05
+  typingSpeed: 0.025
   voiceSound: {fileID: 0}
   voicePitch: 1
