@@ -1,7 +1,15 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class AmmoCollectible : MonoBehaviour
 {
+    void Start()
+    {
+        if (gameObject != null)
+        transform.DOScale(.9f,.5f)
+        .SetLoops(-1, LoopType.Yoyo)
+        .SetEase(Ease.InOutSine);
+    }
     void Update()
     {
         

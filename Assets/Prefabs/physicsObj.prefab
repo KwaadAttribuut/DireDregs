@@ -168,6 +168,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 0
   collectionScore: 50
+  trashPool:
+  - {fileID: 8402833154811377428, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: -6183337407855934865, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: -8359775848365231722, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: -7368216570539407323, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: 1326834445069439433, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: -3568886015543401181, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: 895476082401395373, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: -32514114682764834, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: -4278094443657299942, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: 2708418884355310673, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: 9083768210631742121, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: -32514114682764834, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
+  - {fileID: -497357153, guid: ee23658d8989fd6478201e0b3fe37a27, type: 3}
 --- !u!114 &1255699777170257105
 MonoBehaviour:
   m_ObjectHideFlags: 0

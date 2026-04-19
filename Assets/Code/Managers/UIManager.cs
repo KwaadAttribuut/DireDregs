@@ -19,12 +19,14 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         //Singleton method
-        if (Instance == null) {
+        if (Instance == null)
+        {
             //First run, set the instance
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else if (Instance != this) {
+        else if (Instance != this)
+        {
             //Instance is not the same as the one we have, destroy old one, and reset to newest one
             Destroy(Instance.gameObject);
             Instance = this;
@@ -64,6 +66,20 @@ public class UIManager : MonoBehaviour
             {
                 AudioManager.Instance.PauseMusic(false);
             }
+        }
+    }
+
+    public void OpenMenuButton()
+    {
+        playerUI.SetActive(menuCanvas.activeSelf);
+        menuCanvas.SetActive(!menuCanvas.activeSelf);
+        if (menuCanvas.activeSelf == true)
+        {
+            AudioManager.Instance.PauseMusic(true);
+        }
+        else if (menuCanvas.activeSelf == false)
+        {
+            AudioManager.Instance.PauseMusic(false);
         }
     }
 

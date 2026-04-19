@@ -25,17 +25,14 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        //Singleton method
-        if (Instance == null) {
-            //First run, set the instance
+        if (Instance == null)
+        {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else if (Instance != this) {
-            //Instance is not the same as the one we have, destroy old one, and reset to newest one
-            Destroy(Instance.gameObject);
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+        else
+        {
+            Destroy(gameObject);
         }
     }
     
