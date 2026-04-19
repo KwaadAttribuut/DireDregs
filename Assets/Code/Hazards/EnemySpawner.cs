@@ -11,6 +11,14 @@ public class EnemySpawner : MonoBehaviour
     {
         StartCoroutine(spawnEnemy(waveInterval, enemySlime));
     }
+
+    void Update()
+    {
+        if (PauseController.IsGamePaused)
+        {
+            enemySpawnActive = false;
+        }
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         enemySpawnActive = true;

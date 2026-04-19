@@ -18,18 +18,13 @@ public class PlayerHealth: MonoBehaviour, iDamageable
     float blinkTimer;
     bool blinking;
 
-    public Slider healthSlider;
+    Vector2 playerRespawnPoint;
 
     void Awake()
     {
+        playerRespawnPoint = transform.position;
         currentPlayerHealth = maxPlayerHealth;
         sprite = GetComponent<SpriteRenderer>();
-
-        if(healthSlider != null)
-        {
-            healthSlider.maxValue = maxPlayerHealth;
-            healthSlider.value = currentPlayerHealth;
-        }
     }
     void Update()
     {
@@ -46,11 +41,8 @@ public class PlayerHealth: MonoBehaviour, iDamageable
 
         currentPlayerHealth -= amount;
         AudioManager.Instance.PlaySFX(AudioManager.Instance.damageSFX);
-        GameManager.Instance.updateHealthUI();
+        UIManager.Instance.updateHealthUI();
         CameraShakeManager.Instance.Shake(2f, 0.25f);
-
-        if(healthSlider != null)
-            healthSlider.value = currentPlayerHealth;
 
         if(currentPlayerHealth <= 0)
         {
@@ -79,6 +71,20 @@ public class PlayerHealth: MonoBehaviour, iDamageable
         }
         sprite.enabled = 
         Mathf.FloorToInt(blinkTimer/blinkInterval) % 2 == 0;
+    }
+
+    public void UpdateSpawn(Vector2 playerRespawnPos)
+    {
+        playerRespawnPoint = playerRespawnPos;
+    }
+
+    public void PlayerRespawn()
+    {
+        transform.position = playerRespawnPoint;
+        currentPlayerHealth = maxPlayerHealth;
+        SceneLoader.Instance.ResumeGame();
+        gameOverPanel.SetActive(false);
+        gameObject.SetActive(true);
     }
     void Die()
     {

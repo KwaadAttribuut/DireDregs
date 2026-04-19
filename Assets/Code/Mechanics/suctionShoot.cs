@@ -12,7 +12,8 @@ public class suctionShoot : MonoBehaviour
     private int ammoCount;
 
     // Hold button code 
-    public float timePressed = 0f;
+    private float timePressed = 0f;
+    public float timePressedBuffer = 0f;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class suctionShoot : MonoBehaviour
     }
 
     // Update is called once per frame
+    [Obsolete]
     void Update()
     {
         ammoCount = GameManager.Instance.currentAmmoCount;
@@ -30,35 +32,41 @@ public class suctionShoot : MonoBehaviour
         float angle = Mathf.Atan2(mouseDistance.y, mouseDistance.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        if (PauseController.IsGamePaused)
+        {
+            if (gameObject.GetComponent<PolygonCollider2D>() != null)
+            {
+                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            }
+            if (gameObject.GetComponentInChildren<ParticleSystem>() != null)
+            {
+                gameObject.GetComponentInChildren<ParticleSystem>().enableEmission = false;
+            }
+        }
     }
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        if (context.performed && !Input.GetMouseButton(0) && ammoCount > 0 && canShoot)
+        if (PauseController.IsGamePaused)
+        {
+            return;
+        }
+        if (context.started && !Input.GetMouseButton(0) && ammoCount > 0 && canShoot)
         {
             timePressed = Time.time;
         }
         if (context.canceled && !Input.GetMouseButton(0) && ammoCount > 0 && canShoot)
         {
-            timePressed = Time.time - timePressed;
-            if (timePressed <= 1)
+            timePressedBuffer = Time.time - timePressed;
+            if (timePressedBuffer < 3)
             {
                 StartCoroutine(ShootCoroutine());
-                CameraShakeManager.Instance.Shake(0.5f, 0.25f);
+                CameraShakeManager.Instance.Shake(3.5f * timePressedBuffer, 0.15f * timePressedBuffer);
             }
-            else if (1 < timePressed && timePressed <= 2)
-            {
-                StartCoroutine(ShootCoroutine());
-                CameraShakeManager.Instance.Shake(3f, 0.25f);
-            }
-            else if (2 < timePressed)
+            else if (timePressedBuffer >= 3)
             {
                 StartCoroutine(ShootCoroutine());
                 CameraShakeManager.Instance.Shake(10f, 0.45f);
-            }
-            else
-            {
-                Debug.Log("Shoot hold value error");
             }
         }
     }
@@ -77,6 +85,10 @@ public class suctionShoot : MonoBehaviour
 
     public void Vacuum(InputAction.CallbackContext context)
     {
+        if (PauseController.IsGamePaused)
+        {
+            return;
+        }
         if (context.performed)
         {
             gameObject.GetComponent<PolygonCollider2D>().enabled = true;

@@ -31,18 +31,23 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
+        if (PauseController.IsGamePaused)
+        {
+            rb.linearVelocity = Vector2.zero;
+            animator.SetBool("isWalking", false);
+            return;
+        }
         if (isDashing)
         {
             return;
         }
         rb.linearVelocity = moveInput * moveSpeed;
+        animator.SetBool("isWalking", rb.linearVelocity.magnitude > 0);
         moveDirection = new Vector2(moveInput.x, moveInput.y);
     }
 
     public void Move(InputAction.CallbackContext context)
     {
-        animator.SetBool("isWalking", true);
-
         if (context.canceled)
         {
             animator.SetBool("isWalking", false);

@@ -1,49 +1,40 @@
 using UnityEngine;
 using System.Collections;
-using System.Data.Common;
-using Unity.VisualScripting;
+using System;
 
 public class bounceBullet : MonoBehaviour
 {
     [Header("Bullet Control")]
-    [SerializeField] private float[] moveSpeed;
+    [SerializeField] private float moveSpeed = 8.3f;
     [SerializeField] private float damage = 1f;
     private Rigidbody2D rb;
-    [SerializeField] float[] damageTimer;
     private bool canDamage = true;
     private float shootHoldTime;
+    [SerializeField] float knockbackForce;
+    [SerializeField] float knockbackTime;
+    [SerializeField] float stunTime;
 
     [Header("Sprite Control")]
     [SerializeField] Sprite[] bulletSprites;
 
-    [System.Obsolete]
+    [Obsolete]
     void Start()
     {
-        GetComponent<Rigidbody2D>().AddTorque(360, ForceMode2D.Impulse);
         suctionShoot sctnShoot = FindObjectOfType<suctionShoot>();
         if (sctnShoot != null)
         {
-            shootHoldTime = sctnShoot.timePressed;
+            shootHoldTime = sctnShoot.timePressedBuffer;
         }
         rb = GetComponent<Rigidbody2D>();
-        if (shootHoldTime <= 1)
+        if (shootHoldTime < 3)
         {
-            rb.linearVelocity = transform.right * moveSpeed[0];
-            StartCoroutine(canDamageTimer(damageTimer[0]));
+            rb.linearVelocity = transform.right * (moveSpeed * shootHoldTime);
+            StartCoroutine(canDamageTimer(shootHoldTime));
         }
-        else if (1 < shootHoldTime && shootHoldTime <= 2)
+        else if (shootHoldTime >= 3)
         {
-            rb.linearVelocity = transform.right * moveSpeed[1];
-            StartCoroutine(canDamageTimer(damageTimer[1]));
-        }
-        else if (2 < shootHoldTime)
-        {
-            rb.linearVelocity = transform.right * moveSpeed[2];
-            StartCoroutine(canDamageTimer(damageTimer[2]));
-        }
-        else
-        {
-            Debug.Log("Shoot hold value error");
+            rb.linearVelocity = transform.right * (moveSpeed * 3);
+            StartCoroutine(canDamageTimer(3));
         }
     }
 
@@ -66,6 +57,10 @@ public class bounceBullet : MonoBehaviour
             if (collision.gameObject.TryGetComponent(out iDamageable damageable))
             {
                 damageable.ApplyDamage(damage);
+                if (collision.gameObject.GetComponent<EnemySlime>())
+                {
+                    collision.gameObject.GetComponent<EnemySlime>().Knockback(transform, knockbackForce, knockbackTime, stunTime);    
+                }
             }
         }
     }

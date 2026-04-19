@@ -14,21 +14,25 @@ public class DamageArea : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-            targetEntered = true;
-            if (collision.TryGetComponent(out iDamageable damageable))
+        targetEntered = true;
+        if (PauseController.IsGamePaused)
+        {
+            return;
+        }
+        if (collision.TryGetComponent(out iDamageable damageable))
+        {
+            if (areaType == AreaType.Constant)
             {
-                if (areaType == AreaType.Constant)
+                damageable.ApplyDamage(damage);
+            }
+            if (areaType == AreaType.Timed)
+            {
+                if (targetEntered == true && timerActive == false)
                 {
-                    damageable.ApplyDamage(damage);
-                }
-                if (areaType == AreaType.Timed)
-                {
-                    if (targetEntered == true && timerActive == false)
-                    {
-                        StartCoroutine(DamageTimer(collision));
-                    }
+                    StartCoroutine(DamageTimer(collision));
                 }
             }
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -44,7 +48,7 @@ public class DamageArea : MonoBehaviour
         collision.TryGetComponent(out iDamageable damageable);
         timerActive = true;
         yield return new WaitForSeconds(damageTimer);
-        if(targetEntered == true)
+        if (targetEntered == true)
         {
             damageable.ApplyDamage(damage);
         }

@@ -13,6 +13,7 @@ public class suctionAim : MonoBehaviour
         gameObject.GetComponent<PolygonCollider2D>().enabled = false;
     }
 
+    [Obsolete]
     void Update()
     {
         Vector2 mousePos = Input.mousePosition;
@@ -22,11 +23,27 @@ public class suctionAim : MonoBehaviour
         float angle = Mathf.Atan2(mouseDistance.y, mouseDistance.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        if (PauseController.IsGamePaused)
+        {
+            if (gameObject.GetComponent<PolygonCollider2D>() != null)
+            {
+                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            }
+            if (gameObject.GetComponentInChildren<ParticleSystem>() != null)
+            {
+                gameObject.GetComponentInChildren<ParticleSystem>().enableEmission = false;
+            }
+        }
     }
 
     [Obsolete]
     public void Vacuum(InputAction.CallbackContext context)
     {
+        if (PauseController.IsGamePaused)
+        {
+            return;
+        }
         if (context.performed)
         {
             gameObject.GetComponent<PolygonCollider2D>().enabled = true;

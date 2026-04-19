@@ -1,83 +1,79 @@
 using System.Collections;
-using NUnit.Framework;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+
 
 public class GameManager : MonoBehaviour
 {
     // UI display elements would be in a seperate UI script in order to avoid the game manager becoming a God Object
-    public static GameManager Instance {get; private set;}
+    public static GameManager Instance { get; private set; }
     [Header("Health Counter")]
     PlayerHealth healthcount;
-    public TMP_Text healthText;
 
     [Header("Weapons and Ammo")]
     public int currentAmmoCount = 0;
-    [SerializeField] int maxAmmoCount;
-    public TMP_Text ammoCounterText;
-    public bool isSuctionOn;
+    public int maxAmmoCount;
+    [Header("Enemies")]
+    public int combatPool = 0;
 
     [Header("Collectibles")]
     public int collectibleCount = 0;
-    public TMP_Text collectibleText;
+    public int depositedCollectibleCount = 0;
 
     [Header("Hitstop")]
     private bool waitingHitStop;
 
     void Awake()
     {
-        //Singleton method
-        if (Instance == null) {
-            //First run, set the instance
+        if (Instance == null)
+        {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else if (Instance != this) {
-            //Instance is not the same as the one we have, destroy old one, and reset to newest one
-            Destroy(Instance.gameObject);
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
-    void Start()
+    // ENEMY SCRIPTS //
+
+    [System.Obsolete]
+    public void GlobalRespawn()
     {
-        UpdateAmmoUI();
-        updateHealthUI();
-        UpdateCollectibleUI();
-        isSuctionOn = false;
+        combatPool = 0;
+        collectibleCount = 0;
+        currentAmmoCount = 3;
+        DespositArea despositArea = FindAnyObjectByType<DespositArea>();
+        despositArea.RespawnAllEnemies();
+        UIManager.Instance.updateHealthUI();
+        UIManager.Instance.UpdateAmmoUI();
+        UIManager.Instance.UpdateCollectibleUI();
     }
 
-    // COLLECTIBLE SYSTEM //
+    // SCORE SYSTEM //
 
-    public void updateHealthUI()
-    {
-        PlayerHealth healthcount = FindFirstObjectByType<PlayerHealth>();
-        healthText.text = $"Health: {healthcount.currentPlayerHealth} / {healthcount.maxPlayerHealth}";
-    }
     public void AddCollectible(int collectibleAmount)
     {
         collectibleCount += collectibleAmount;
-        UpdateCollectibleUI();
+        UIManager.Instance.UpdateCollectibleUI();
     }
-    private void UpdateCollectibleUI()
+
+    public void DepositCollectibles()
     {
-        if(collectibleText != null)
-        {
-            collectibleText.text = $"Collection Score: {collectibleCount}";
-        }
+        depositedCollectibleCount += collectibleCount;
+        collectibleCount = 0;
+        UIManager.Instance.UpdateCollectibleUI();
     }
 
     // AMMO SYSTEM //
 
     public void AddAmmo(int ammoAdd)
     {
-        if(currentAmmoCount < maxAmmoCount)
+        if (currentAmmoCount < maxAmmoCount)
         {
             currentAmmoCount += ammoAdd;
-            UpdateAmmoUI();
+            UIManager.Instance.UpdateAmmoUI();
         }
         else
         {
@@ -87,18 +83,10 @@ public class GameManager : MonoBehaviour
 
     public void RemoveAmmo(int ammoRemove)
     {
-        if(currentAmmoCount > 0)
+        if (currentAmmoCount > 0)
         {
             currentAmmoCount -= ammoRemove;
-            UpdateAmmoUI();
-        }
-    }
-
-    private void UpdateAmmoUI()
-    {
-        if(ammoCounterText != null)
-        {
-            ammoCounterText.text = $"Stored Ammo: {currentAmmoCount} / {maxAmmoCount}";
+            UIManager.Instance.UpdateAmmoUI();
         }
     }
 

@@ -6,6 +6,7 @@ public class SceneLoader : MonoBehaviour
     public static SceneLoader Instance;
 
     public bool isPaused = false;
+    public GameObject playerObject;
 
     void Awake()
     {
@@ -34,8 +35,18 @@ public class SceneLoader : MonoBehaviour
     public void ReloadScene()
     {
         Time.timeScale = 1f;
+        PauseController.SetPause(false);
         isPaused = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    [System.Obsolete]
+    public void RespawnPlayer()
+    {
+        playerObject.SetActive(true);
+        PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+        playerHealth.PlayerRespawn();
+        GameManager.Instance.GlobalRespawn();
     }
 
     // ---------- PAUSE ----------
@@ -49,14 +60,16 @@ public class SceneLoader : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0f;
+        PauseController.SetPause(true);
         isPaused = true;
+        Time.timeScale = 0f;
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
+        PauseController.SetPause(false);
         isPaused = false;
+        Time.timeScale = 1f;
     }
 
     // ---------- QUIT ----------
