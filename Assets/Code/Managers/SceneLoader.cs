@@ -27,17 +27,23 @@ public class SceneLoader : MonoBehaviour
     // ---------- SCENE LOADING ----------
     public void LoadScene(string sceneName)
     {
+        AudioManager.Instance.PauseMusic(false);
         Time.timeScale = 1f;   // ensure unpaused when changing scenes
         isPaused = false;
         SceneManager.LoadScene(sceneName);
     }
 
+    [System.Obsolete]
     public void ReloadScene()
     {
         Time.timeScale = 1f;
         PauseController.SetPause(false);
         isPaused = false;
+        DespositArea despositArea = FindAnyObjectByType<DespositArea>();
+        despositArea.ResetPlayerSpawn();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Instance.GlobalRespawn();
+
     }
 
     [System.Obsolete]

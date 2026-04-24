@@ -5,6 +5,7 @@ public class DespositArea : MonoBehaviour, iInteractable
 {
     [SerializeField] List<EnemySlime> enemies = new List<EnemySlime>();
     [SerializeField] Vector2 playerRespawnPos;
+    [SerializeField] int RespawnPointNo;
 
     public bool CanInteract()
     {
@@ -18,6 +19,8 @@ public class DespositArea : MonoBehaviour, iInteractable
         {
             GameManager.Instance.DepositCollectibles();
             UpdatePlayerRespawn();
+            BoundaryManager boundaryManager = FindFirstObjectByType<BoundaryManager>();
+            boundaryManager.SetNewRespawnBoundary(RespawnPointNo);
             RespawnAllEnemies();
         }
     }
@@ -28,6 +31,14 @@ public class DespositArea : MonoBehaviour, iInteractable
         Debug.Log($"Player Respawn Updated: {playerRespawnPos}");
         PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
         playerHealth.UpdateSpawn(playerRespawnPos);
+    }
+
+    [System.Obsolete]
+    public void ResetPlayerSpawn()
+    {
+        Debug.Log($"Player Respawn Updated: {playerRespawnPos}");
+        PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+        playerHealth.UpdateSpawn(new Vector2(0, 0));
     }
 
     public void RespawnAllEnemies()

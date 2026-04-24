@@ -42,14 +42,13 @@ public class UIManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void updateHealthUI()
     {
         PlayerHealth healthcount = FindFirstObjectByType<PlayerHealth>();
-        healthText.text = $"Health: {healthcount.currentPlayerHealth} / {healthcount.maxPlayerHealth}";
+        if (healthcount != null)
+        {
+            healthText.text = $"Health: {healthcount.currentPlayerHealth} / {healthcount.maxPlayerHealth}";
+        }
     }
 
     public void OpenMenu(InputAction.CallbackContext context)
@@ -60,10 +59,12 @@ public class UIManager : MonoBehaviour
             menuCanvas.SetActive(!menuCanvas.activeSelf);
             if (menuCanvas.activeSelf == true)
             {
+                PauseController.SetPause(true);
                 AudioManager.Instance.PauseMusic(true);
             }
             else if (menuCanvas.activeSelf == false)
             {
+                PauseController.SetPause(false);
                 AudioManager.Instance.PauseMusic(false);
             }
         }

@@ -11,7 +11,7 @@ public class MapTransition : MonoBehaviour
     CinemachineConfiner2D confiner;
     [SerializeField] Direction direction;
     [SerializeField] float additivePos = 2;
-    
+        
     enum Direction {Up, Down, Left, Right};
 
     [System.Obsolete]
@@ -19,7 +19,6 @@ public class MapTransition : MonoBehaviour
     {
         confiner = FindObjectOfType<CinemachineConfiner2D>();
     }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

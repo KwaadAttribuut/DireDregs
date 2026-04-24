@@ -44,8 +44,11 @@ public class GameManager : MonoBehaviour
         combatPool = 0;
         collectibleCount = 0;
         currentAmmoCount = 3;
+        BoundaryManager boundaryManager = FindFirstObjectByType<BoundaryManager>();
+        boundaryManager.setToBoundary();
         DespositArea despositArea = FindAnyObjectByType<DespositArea>();
         despositArea.RespawnAllEnemies();
+        UIManager.Instance.playerUI.SetActive(true);
         UIManager.Instance.updateHealthUI();
         UIManager.Instance.UpdateAmmoUI();
         UIManager.Instance.UpdateCollectibleUI();
