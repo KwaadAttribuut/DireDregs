@@ -32,11 +32,13 @@ public class MenuController : MonoBehaviour
         mainMenu.alpha = 1;
         mainMenu.interactable = true;
         mainMenu.blocksRaycasts = true;
-
-        optionsMenu.alpha = 0;
-        optionsMenu.interactable = false;
-        optionsMenu.blocksRaycasts = false;
-        optionsMenu.gameObject.SetActive(false);
+        if (optionsMenu != null)
+        {
+            optionsMenu.alpha = 0;
+            optionsMenu.interactable = false;
+            optionsMenu.blocksRaycasts = false;
+            optionsMenu.gameObject.SetActive(false);
+        }
     }
 
     // ---------- TRANSITION SYSTEM ----------

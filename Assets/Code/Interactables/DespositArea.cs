@@ -22,6 +22,10 @@ public class DespositArea : MonoBehaviour, iInteractable
             BoundaryManager boundaryManager = FindFirstObjectByType<BoundaryManager>();
             boundaryManager.SetNewRespawnBoundary(RespawnPointNo);
             RespawnAllEnemies();
+            if (GameManager.Instance.collectibleCount + GameManager.Instance.depositedCollectibleCount >= GameManager.Instance.currentQuota)
+            {
+                GameManager.Instance.UpdateQuota();
+            }
         }
     }
 
@@ -30,6 +34,8 @@ public class DespositArea : MonoBehaviour, iInteractable
     {
         Debug.Log($"Player Respawn Updated: {playerRespawnPos}");
         PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+        playerHealth.currentPlayerHealth = playerHealth.maxPlayerHealth;
+        UIManager.Instance.updateHealthUI();
         playerHealth.UpdateSpawn(playerRespawnPos);
     }
 

@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be39e7bf9b096444f94df74fe7bef9ee, type: 3}
-  m_Name: GrimeInfo
+  m_Name: TyphonInfo
   m_EditorClassIdentifier: 
-  npcName: Grime.Log
-  npcPortrait: {fileID: -1551430536509087318, guid: 8d7d7ddd781d2ed478830b49008e7203, type: 3}
+  npcName: 'Unit Activation: Typhon'
+  npcPortrait: {fileID: -1013189461482472467, guid: 37fd73d7c9e6eaf48bdd984e4afa8357, type: 3}
   dialogueLines:
-  - Deep grime is dangerous to walk in.
+  - 'NEPTUNUS INC. PRODUCT INFORMATION \nASSET DEPLOYED: UNIT+1F300 TYPHON \nASSIGNMENT:
+    ASSIST IN OCEANIC CLEANUP \nCURRENT PROGRESS: 0% \nUNABLE TO CALCULATE ESTIMATED
+    REMAINING TIME'
   autoProgressLines: 00
   autoProgressDelay: 1.5
   typingSpeed: 0.025

@@ -33,6 +33,14 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void NextScene()
+    {
+        AudioManager.Instance.PauseMusic(false);
+        Time.timeScale = 1f;   // ensure unpaused when changing scenes
+        isPaused = false;
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex +  1);
+    }
+
     [System.Obsolete]
     public void ReloadScene()
     {

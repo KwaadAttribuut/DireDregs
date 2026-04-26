@@ -118,6 +118,28 @@ public class AudioManager : MonoBehaviour
                     musicSource.Play();
                 }
             }
+            else if (sceneName == "Ending")
+            {
+                if (backgroundMusic != null && musicSource != null)
+                {
+                    if (musicSource.clip = backgroundMusic) return;
+                    else
+                    {
+                        if (BGM1.isPlaying)
+                        {
+                            BGM1.Stop();
+                        }
+                        if (BGM2.isPlaying)
+                        {
+                            BGM2.Stop();
+                        }
+                        isPlayingBGM1 = true;
+                        BGM1.clip = backgroundMusic;
+                        musicSource.loop = true;
+                        musicSource.Play();
+                    }
+                }
+            }
             // if (bgmCalm != null && musicSource != null)
             // {
             //     if (BGM1.clip = bgmCalm) return;

@@ -11,5 +11,9 @@ public class SceneChecker : MonoBehaviour
         curSceneName = currentScene.name;
         Debug.Log($"Current scene is {currentScene.name}");
         AudioManager.Instance.CheckScene(currentScene.name);
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.quotaCheck(currentScene.name);   
+        }
     }
 }

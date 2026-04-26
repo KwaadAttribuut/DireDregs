@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using System.Collections.Generic;
 
 
 public class GameManager : MonoBehaviour
@@ -19,6 +18,9 @@ public class GameManager : MonoBehaviour
     [Header("Collectibles")]
     public int collectibleCount = 0;
     public int depositedCollectibleCount = 0;
+    public int currentQuota;
+    public int[] quotas = {500, 1000, 2500, 5000};
+    [SerializeField] int quotaNo = 0;
 
     [Header("Hitstop")]
     private bool waitingHitStop;
@@ -55,6 +57,47 @@ public class GameManager : MonoBehaviour
     }
 
     // SCORE SYSTEM //
+
+    public void quotaCheck(string sceneName)
+    {
+        if (sceneName == "Tutorial")
+        {
+            quotaNo = 3;
+            quotas[0] = 500;
+            quotas[1] = 500;
+            quotas[2] = 500;
+            quotas[3] = 500;
+            currentQuota = quotas[3];
+        }
+        if (sceneName == "SampleScene")
+        {
+            quotaNo = 0;
+            quotas[0] = 500;
+            quotas[1] = 1000;
+            quotas[2] = 2500;
+            quotas[3] = 5000;
+            currentQuota = quotas[0];
+        }
+        
+        UIManager.Instance.UpdateCollectibleUI();
+    }
+
+    public void UpdateQuota()
+    {
+        quotaNo++;
+        Debug.Log($"Current Quota No. {quotaNo}");
+        if (quotaNo <= 3)
+        {
+            currentQuota = quotas[quotaNo];
+        }
+        else {
+            Debug.Log("Win State");
+            depositedCollectibleCount = 0;
+            collectibleCount = 0;
+            SceneLoader.Instance.NextScene();
+        }
+        UIManager.Instance.UpdateCollectibleUI();
+    }
 
     public void AddCollectible(int collectibleAmount)
     {

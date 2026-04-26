@@ -3,9 +3,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NPC : MonoBehaviour, iInteractable
+public class Terminal : MonoBehaviour, iInteractable
 {
-    public NPCDialogue dialogueData;
+    public TerminalDialogue dialogueData;
     public GameObject dialoguePanel;
     public TMP_Text dialogueText, nameText;
     public Image portraitImage;
@@ -35,6 +35,7 @@ public class NPC : MonoBehaviour, iInteractable
 
     void StartDialogue()
     {
+        UIManager.Instance.playerUI.SetActive(false);
         isDialogueActive = true;
         dialogueIndex = 0;
 
@@ -93,5 +94,6 @@ public class NPC : MonoBehaviour, iInteractable
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
         PauseController.SetPause(false);
+        UIManager.Instance.playerUI.SetActive(true);
     }
 }

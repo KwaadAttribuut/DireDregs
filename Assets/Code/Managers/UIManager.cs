@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 
@@ -7,10 +8,15 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
     [Header("UI Text Display")]
-    public TMP_Text healthText;
-    public TMP_Text ammoCounterText;
+    public Image healthDisplay;
+    [SerializeField] Sprite[] healthStates;
+    public Image ammoDisplay;
+    [SerializeField] Sprite[] ammoStates;
+    public TMP_Text collectionText;
+    public TMP_Text depositText;
+    public Image quotaImage;
+    public TMP_Text quotaText;
 
-    public TMP_Text collectibleText;
     public GameObject menuCanvas;
     public GameObject playerUI;
 
@@ -47,7 +53,7 @@ public class UIManager : MonoBehaviour
         PlayerHealth healthcount = FindFirstObjectByType<PlayerHealth>();
         if (healthcount != null)
         {
-            healthText.text = $"Health: {healthcount.currentPlayerHealth} / {healthcount.maxPlayerHealth}";
+            healthDisplay.sprite = healthStates[(int)healthcount.currentPlayerHealth];
         }
     }
 
@@ -86,16 +92,34 @@ public class UIManager : MonoBehaviour
 
     public void UpdateCollectibleUI()
     {
-        if (collectibleText != null)
+        if (collectionText != null)
         {
-            collectibleText.text = $"Collection Score: {GameManager.Instance.collectibleCount} ({GameManager.Instance.depositedCollectibleCount})";
+            collectionText.text = $"{GameManager.Instance.collectibleCount}";
+        }
+        if (depositText != null)
+        {
+            depositText.text = $"{GameManager.Instance.depositedCollectibleCount}";
+        }
+        if (quotaText != null)
+        {
+            quotaText.text = $"{GameManager.Instance.currentQuota}";
+            if (GameManager.Instance.collectibleCount + GameManager.Instance.depositedCollectibleCount >= GameManager.Instance.currentQuota)
+            {
+                quotaImage.color = new Color32(0, 255, 0, 255);
+                quotaText.color = new Color32(0, 255, 0, 255);
+            }
+            else
+            {
+                quotaImage.color = new Color32(255, 255, 255, 100);
+                quotaText.color = new Color32(255, 255, 255, 100);
+            }
         }
     }
     public void UpdateAmmoUI()
     {
-        if (ammoCounterText != null)
+        if (ammoDisplay != null)
         {
-            ammoCounterText.text = $"Stored Ammo: {GameManager.Instance.currentAmmoCount} / {GameManager.Instance.maxAmmoCount}";
+            ammoDisplay.sprite = ammoStates[GameManager.Instance.currentAmmoCount];
         }
     }
 }

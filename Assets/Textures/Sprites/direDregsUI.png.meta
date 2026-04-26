@@ -1,0 +1,604 @@
+fileFormatVersion: 2
+guid: d623c9b0e264c4443a872a716957a943
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8064153373680417462
+    second: direDregsUI_0
+  - first:
+      213: -2308323567090904091
+    second: direDregsUI_1
+  - first:
+      213: 945141801262008606
+    second: direDregsUI_2
+  - first:
+      213: -2858490376381293
+    second: direDregsUI_3
+  - first:
+      213: 8252506366467812821
+    second: direDregsUI_4
+  - first:
+      213: 2644576848308138481
+    second: direDregsUI_5
+  - first:
+      213: 8757315772294958786
+    second: direDregsUI_6
+  - first:
+      213: -3554008188444962760
+    second: direDregsUI_7
+  - first:
+      213: 716842507319374537
+    second: direDregsUI_8
+  - first:
+      213: 5242024184670659452
+    second: direDregsUI_9
+  - first:
+      213: -2992434830320092960
+    second: direDregsUI_10
+  - first:
+      213: 5012229096581554662
+    second: direDregsUI_11
+  - first:
+      213: 9032614550713134432
+    second: direDregsUI_12
+  - first:
+      213: 4576152509835057809
+    second: direDregsUI_13
+  - first:
+      213: 866965983974336350
+    second: direDregsUI_14
+  - first:
+      213: -4675216013354822512
+    second: direDregsUI_15
+  - first:
+      213: -4109272498249383603
+    second: direDregsUI_16
+  - first:
+      213: -7108303763358410124
+    second: direDregsUI_17
+  - first:
+      213: -3533980118204260256
+    second: direDregsUI_18
+  - first:
+      213: -7922717006698686881
+    second: direDregsUI_19
+  - first:
+      213: 1711608109709152825
+    second: direDregsUI_20
+  - first:
+      213: 5876152050414158171
+    second: direDregsUI_21
+  - first:
+      213: 1249821900432239534
+    second: direDregsUI_22
+  - first:
+      213: 5777354743841461536
+    second: direDregsUI_23
+  - first:
+      213: 3904844073950298215
+    second: direDregsUI_24
+  - first:
+      213: -6186835118196141261
+    second: direDregsUI_25
+  - first:
+      213: 8764874369901684777
+    second: direDregsUI_26
+  - first:
+      213: -4213132498875502077
+    second: direDregsUI_27
+  - first:
+      213: 2321996241925160132
+    second: direDregsUI_28
+  - first:
+      213: 6189802129807603031
+    second: direDregsUI_29
+  - first:
+      213: 8307553041779162969
+    second: direDregsUI_30
+  - first:
+      213: -4934850290409787644
+    second: direDregsUI_31
+  - first:
+      213: 124680341345065272
+    second: direDregsUI_32
+  - first:
+      213: 2767821990049095376
+    second: direDregsUI_33
+  - first:
+      213: -94128472026227234
+    second: direDregsUI_34
+  - first:
+      213: -3953347259263008524
+    second: direDregsUI_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: direDregsUI_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a45c28b7b3f561090800000000000000
+      internalID: -8064153373680417462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e352ec12ff27ffd0800000000000000
+      internalID: -2308323567090904091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19489ee571dd1d00800000000000000
+      internalID: 945141801262008606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 96
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c9588d738d5fff0800000000000000
+      internalID: -2858490376381293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dda6ff01dac68270800000000000000
+      internalID: 8252506366467812821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1f0a8c1ac63b420800000000000000
+      internalID: 2644576848308138481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 96
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce0191fb4c388970800000000000000
+      internalID: 8757315772294958786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 96
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83098eee160adaec0800000000000000
+      internalID: -3554008188444962760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2fba0667cb2f900800000000000000
+      internalID: 716842507319374537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 96
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c732d47f8396fb840800000000000000
+      internalID: 5242024184670659452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e8b34d506cb876d0800000000000000
+      internalID: -2992434830320092960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 96
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1ee92bec30f8540800000000000000
+      internalID: 5012229096581554662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06de748b31b4a5d70800000000000000
+      internalID: 9032614550713134432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 96
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a1bb25672c18f30800000000000000
+      internalID: 4576152509835057809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: direDregsUI_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57232318f4180c00800000000000000
+      internalID: 866965983974336350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f91f8f34a78bb9042af429150b70e38e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      direDregsUI_0: -8064153373680417462
+      direDregsUI_1: -2308323567090904091
+      direDregsUI_10: -2992434830320092960
+      direDregsUI_11: 5012229096581554662
+      direDregsUI_12: 9032614550713134432
+      direDregsUI_13: 4576152509835057809
+      direDregsUI_14: 866965983974336350
+      direDregsUI_15: -4675216013354822512
+      direDregsUI_16: -4109272498249383603
+      direDregsUI_17: -7108303763358410124
+      direDregsUI_18: -3533980118204260256
+      direDregsUI_19: -7922717006698686881
+      direDregsUI_2: 945141801262008606
+      direDregsUI_20: 1711608109709152825
+      direDregsUI_21: 5876152050414158171
+      direDregsUI_22: 1249821900432239534
+      direDregsUI_23: 5777354743841461536
+      direDregsUI_24: 3904844073950298215
+      direDregsUI_25: -6186835118196141261
+      direDregsUI_26: 8764874369901684777
+      direDregsUI_27: -4213132498875502077
+      direDregsUI_28: 2321996241925160132
+      direDregsUI_29: 6189802129807603031
+      direDregsUI_3: -2858490376381293
+      direDregsUI_30: 8307553041779162969
+      direDregsUI_31: -4934850290409787644
+      direDregsUI_32: 124680341345065272
+      direDregsUI_33: 2767821990049095376
+      direDregsUI_34: -94128472026227234
+      direDregsUI_35: -3953347259263008524
+      direDregsUI_4: 8252506366467812821
+      direDregsUI_5: 2644576848308138481
+      direDregsUI_6: 8757315772294958786
+      direDregsUI_7: -3554008188444962760
+      direDregsUI_8: 716842507319374537
+      direDregsUI_9: 5242024184670659452
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

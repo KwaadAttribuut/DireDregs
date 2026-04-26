@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class AmmoCollectible : MonoBehaviour
+public class HealthCollectible : MonoBehaviour
 {
     void Start()
     {
@@ -14,12 +14,23 @@ public class AmmoCollectible : MonoBehaviour
     {
         
     }
+
+    [System.Obsolete]
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("collectionArea"))
         {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.collectibleSFX);
-            GameManager.Instance.AddAmmo(2);
+            PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+            if (playerHealth.currentPlayerHealth + 2 >= 5)
+            {
+                playerHealth.currentPlayerHealth = 5;
+            }
+            else
+            {
+                playerHealth.currentPlayerHealth += 2;
+            }
+            UIManager.Instance.updateHealthUI();
             Destroy(gameObject);
         }
     }

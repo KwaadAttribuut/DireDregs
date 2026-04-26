@@ -14,6 +14,7 @@ public class DamageArea : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
+        if (!collision.CompareTag("Player")) return;
         targetEntered = true;
         if (PauseController.IsGamePaused)
         {

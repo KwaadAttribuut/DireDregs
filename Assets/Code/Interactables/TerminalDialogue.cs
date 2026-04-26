@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="NewNPCDialogue", menuName ="NPC Dialogue")]
-public class NPCDialogue : ScriptableObject
+[CreateAssetMenu(fileName ="NewTerminalDialogue", menuName ="Terminal Dialogue")]
+public class TerminalDialogue : ScriptableObject
 {
     public string npcName;
     public Sprite npcPortrait;
